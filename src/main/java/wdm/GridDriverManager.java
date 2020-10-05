@@ -3,17 +3,11 @@ package wdm;
 import enums.DriverType;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import wdm.chrome.RegisterChrome;
-import wdm.firefox.RegisterFirefox;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Hashtable;
-import java.util.Random;
 
 public class GridDriverManager {
 
