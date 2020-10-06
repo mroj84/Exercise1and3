@@ -15,7 +15,7 @@ public class GridDriverManager {
 
     public WebDriver getDriver(DriverType type) {
         //Temp fix for: java.lang.RuntimeException: java.net.BindException: Address already in use: bind
-        if (type.equals(DriverType.FIREFOX)) {
+        if (type.equals(DriverType.CHROME)) {
             WebDriver driver = null;
             try {
                 driver = new RemoteWebDriver(new URL(GRID_HUB_URL), DesiredCapabilities.chrome());
