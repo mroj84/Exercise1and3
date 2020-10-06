@@ -13,6 +13,13 @@ public class MenuPage {
     @FindBy(css = ".header_user_info > .login")
     private WebElement signInButton;
 
+    @FindBy(css = "#search_query_top")
+    private WebElement searchInput;
+
+    @FindBy(css = "button.btn.btn-default.button-search")
+    private WebElement searchButton;
+
+
     private By logoutButtonSelector = By.cssSelector(".header_user_info > .logout");
 
     public MenuPage(WebDriver driver) {
@@ -24,18 +31,26 @@ public class MenuPage {
 
     private Helper helper = new Helper();
 
-    public void navigateToMainPage(){
+    public void navigateToMainPage() {
         driver.get("http://automationpractice.com/index.php");
         assertThat(driver.findElements(By.id("header_logo")).size() > 0);
     }
 
-    public void goToSignInPage(){
+    public void goToSignInPage() {
         signInButton.click();
     }
 
-    public boolean isCustomerLogged(){
+    public boolean isCustomerLogged() {
         return driver.findElements(logoutButtonSelector).size() > 0;
     }
 
+    public void searchForProduct(String product) {
+        navigateToMainPage();
+        searchInput.sendKeys(product);
+        searchButton.click();
+    }
 
+    public void verifyProductFound(String product) {
+        assertThat(driver.findElements(By.cssSelector("a[title='" + product + "']")));
+    }
 }

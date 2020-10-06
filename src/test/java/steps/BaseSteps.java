@@ -10,13 +10,4 @@ public class BaseSteps {
 
     GridDriverManager manager = new GridDriverManager();
 
-    @AfterEach
-    public void cleanup(){
-        if (driver!=null)
-            driver.quit();
-    }
-
-    @AfterAll
-    public static void tearDown(){
-    }
 }

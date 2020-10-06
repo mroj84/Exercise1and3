@@ -1,4 +1,4 @@
-Feature: Register
+Feature: Login
 
   @regression
   Scenario: Successful login scenario with firefox
